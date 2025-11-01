@@ -1,3 +1,4 @@
+import utils.validator
 
 def main():
     while True:
