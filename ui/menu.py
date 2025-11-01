@@ -1,4 +1,6 @@
 import utils.validator
+from utils.validator import is_not_empty
+
 
 def main():
     while True:
@@ -7,6 +9,9 @@ def main():
         print("2. Manage Categories")
         print("0. Exit")
         choice = int(input("\nSelect an Option: "))
+        if not is_not_empty(choice):
+            print("Input cannot be empty. Please try again.")
+            continue
 
         match choice:
             case 1:
@@ -29,6 +34,9 @@ def show_product_menu():
         print("4. Delete Product")
         print("0. Back to Main Menu")
         choice = int(input("\nSelect an Option: "))
+        if not is_not_empty(choice):
+            print("Input cannot be empty. Please try again.")
+            continue
 
         match choice:
             case 1:
@@ -55,6 +63,9 @@ def show_category_menu():
         print("4. Delete Category")
         print("0. Back to Main Menu")
         choice = int(input("\nSelect an Option: "))
+        if not is_not_empty(choice):
+            print("Input cannot be empty. Please try again.")
+            continue
 
         match choice:
             case 1:
