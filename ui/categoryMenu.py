@@ -1,6 +1,5 @@
 from utils.validator import *
 
-
 def add_category():
     while True:
         category_name = input("Enter Category Name: ")
@@ -29,4 +28,3 @@ def update_category():
 
 def delete_category():
     pass
-

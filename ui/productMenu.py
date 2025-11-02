@@ -1,6 +1,5 @@
 from utils.validator import *
 
-
 def add_product():
     while True:
         name = input("Enter Product Name: ")
@@ -36,7 +35,6 @@ def view_products():
 
 
 def update_products():
-
     pass
 
 def delete_products():

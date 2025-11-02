@@ -1,6 +1,4 @@
 import utils.validator
-from utils.validator import is_not_empty
-
 
 def main():
     while True:
@@ -9,9 +7,6 @@ def main():
         print("2. Manage Categories")
         print("0. Exit")
         choice = int(input("\nSelect an Option: "))
-        if not is_not_empty(choice):
-            print("Input cannot be empty. Please try again.")
-            continue
 
         match choice:
             case 1:
@@ -24,7 +19,7 @@ def main():
             case _:
                 print("Invalid choice. Please try again.")
 
-
+from ui.productMenu import *
 def show_product_menu():
     while True:
         print("\n~~~~~  Product Menu  ~~~~~")
@@ -34,14 +29,13 @@ def show_product_menu():
         print("4. Delete Product")
         print("0. Back to Main Menu")
         choice = int(input("\nSelect an Option: "))
-        if not is_not_empty(choice):
-            print("Input cannot be empty. Please try again.")
-            continue
 
         match choice:
             case 1:
+                add_product()
                 print("Add Product...")
             case 2:
+                view_products()
                 print("View Products...")
             case 3:
                 print("Update Product...")
@@ -53,7 +47,7 @@ def show_product_menu():
             case _:
                 print("Invalid choice. Please try again.")
 
-
+from ui.categoryMenu import *
 def show_category_menu():
     while True:
         print("\n~~~~~  Category Menu  ~~~~~")
@@ -63,14 +57,13 @@ def show_category_menu():
         print("4. Delete Category")
         print("0. Back to Main Menu")
         choice = int(input("\nSelect an Option: "))
-        if not is_not_empty(choice):
-            print("Input cannot be empty. Please try again.")
-            continue
 
         match choice:
             case 1:
+                add_category()
                 print("Add Category...")
             case 2:
+                view_categories()
                 print("View Categories...")
             case 3:
                 print("Update Category...")
@@ -81,6 +74,5 @@ def show_category_menu():
                 break
             case _:
                 print("Invalid choice. Please try again.")
-
 
 main()
