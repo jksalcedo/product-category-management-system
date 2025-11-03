@@ -9,7 +9,7 @@ You must **only** work in the files assigned to your role.
 
 ---
 
-## Role 1: Database Developer (The "Engine"️)
+## Role 1: Database Developer (Laurence)
 
 Your mission is to handle all data and database logic. You make sure data can be saved, fetched, updated, and deleted.
 
@@ -41,7 +41,7 @@ Your mission is to handle all data and database logic. You make sure data can be
 
 ---
 
-## Role 2: UI/Menu Developer (The "Dashboard" )
+## Role 2: UI/Menu Developer (Renz)
 
 Your mission is to build the user interface. You handle everything the user sees (`print`) and types (`input`).
 
