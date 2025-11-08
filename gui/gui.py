@@ -30,7 +30,7 @@ class SideBar(ctk.CTkFrame):
     def create_widgets(self, parent, main):
         # create the widgets
         ctk.CTkLabel(self, text="MENU", font=("Arial", 18, "bold")).pack(pady=10)
-        ctk.CTkButton(self, text="Home", width=150).pack(pady=5)
+        ctk.CTkButton(self, text="Home", width=150, command=main.show_home_tab).pack(pady=5)
         ctk.CTkButton(self, text="Categories", width=150, command=main.show_category_tab).pack(pady=5)
         ctk.CTkButton(self, text="Products", width=150, command=main.show_product_tab).pack(pady=5)
         ctk.CTkButton(self, text="Exit", width=150, command=parent.destroy).pack(side="bottom", pady=10)
@@ -41,17 +41,34 @@ class Main(ctk.CTkFrame):
         super().__init__(parent, **kwargs)
         self.pack(side="right", expand=True, fill='both', padx=10, pady=10)
 
-        # self.home_tab = ctk.CTkFrame(self)
+        self.home_tab = HomeTab(self)
         self.category_tab = CategoryTab(self)
         self.product_tab = ProductTab(self)
 
-        self.show_product_tab()
+        self.show_home_tab()
+
+    def show_home_tab(self):
+        self.home_tab.tkraise()
 
     def show_category_tab(self):
         self.category_tab.tkraise()
 
     def show_product_tab(self):
         self.product_tab.tkraise()
+
+class HomeTab(ctk.CTkFrame):
+    def __init__(self, parent):
+        super().__init__(parent)
+        self.place(relx=0, rely=0, relwidth=1, relheight=1)
+
+        ctk.CTkLabel(self, text="🏠 Home", font=("Arial", 24, "bold")).pack(pady=20)
+        ctk.CTkLabel(
+            self,
+            text="Welcome to the Product Category Management System!\n\nUse the sidebar to navigate through different sections.",
+            justify="center",
+            font=("Arial", 16)
+        ).pack(pady=10)
+
 
 class CategoryTab(ctk.CTkFrame):
     def __init__(self, parent):
@@ -91,6 +108,7 @@ class CategoryTab(ctk.CTkFrame):
     def delete_category(self):
         print("Delete Category clicked")
 
+
 class ProductTab(ctk.CTkFrame):
     def __init__(self, parent):
         super().__init__(parent)
@@ -128,7 +146,6 @@ class ProductTab(ctk.CTkFrame):
         popup = ctk.CTkToplevel()
         popup.title("Add Product")
         popup.geometry("300x300")
-
 
     def edit_product_popup(self):
         print("Edit Product clicked")
