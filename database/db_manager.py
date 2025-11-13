@@ -269,3 +269,6 @@ def delete_product(product_id):
     deleted = cursor.rowcount > 0
     conn.close()
     return {"status": "success" if deleted else "error", "deleted": deleted}
+
+
+
